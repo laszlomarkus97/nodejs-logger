@@ -9,6 +9,9 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
+// set the view engine to ejs
+app.set('view engine', 'ejs');
+
 /* the OS can pass environment variable to the nodejs server
    if we dont get one, use 3000 by default
    
@@ -54,6 +57,8 @@ app.post('/', (req, res) => {
 
     res.send(buildHTML())
 });
+
+app.get('/about', (req, res) => { res.render("pages/about")})
 
 /**
  * Just generate the current list for / GET
