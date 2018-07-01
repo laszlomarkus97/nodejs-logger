@@ -34,7 +34,7 @@ function buildHTML(){
     // add basic textfield
     html += `
     <form method="post" action="/">
-    <input type="text" name="user[name]">
+    <input type="text" name="message">
     <input type="submit" value="Submit">
     </form>
     `;
@@ -46,9 +46,9 @@ function buildHTML(){
  */
 app.post('/', (req, res) => {
     
-    if(req.body.user){
+    if(req.body.message){
         var date = new Date();
-        var msg = date.toGMTString() + ": " + req.body.user.name ;
+        var msg = date.toGMTString() + ": " + req.body.message ;
         logs.push(msg);
     }
 
