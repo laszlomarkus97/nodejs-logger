@@ -58,13 +58,10 @@ app.post('/', (req, res) => {
     res.send(buildHTML())
 });
 
+// Generate about page
 app.get('/about', (req, res) => { res.render("pages/about")})
 
-/**
- * Just generate the current list for / GET
- */
-app.get('/', (req, res) => {
-    res.send(buildHTML())
-})
+// Just generate the current list for / GET
+app.get('/', (req, res) => { res.render("pages/index")})
 
 app.listen(port, () => console.log('Example app listening on port ' + port))
