@@ -24,10 +24,22 @@
     </nav>
     <div class="container">
         <h3>Index Page</h3>
-        <% log.forEach(function(item){ %>
-            <%= item %>
-        <% }) %>
 
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Message</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% log.forEach(function(item){ %>
+                <tr>
+                    <td><%= item %></td>
+                </tr>
+                <% }) %>
+            </tbody>
+        </table>
         <form method="post" action="/">
             <input type="text" name="message">
             <input type="submit" value="Submit">
