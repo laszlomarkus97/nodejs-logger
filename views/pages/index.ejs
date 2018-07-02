@@ -6,22 +6,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-default" role="navigation">
-        <div class="container-fluid">
-
-            <div class="navbar-header">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="/">Home</a>
-                    </li>
-                    <li>
-                        <a href="/about">About</a>
-                    </li>
-                </ul>
-            </div>
-
-        </div>
-    </nav>
+    <% include partials/navbar.ejs %>
     <div class="container">
         <h3>Index Page</h3>
 
@@ -34,10 +19,12 @@
             </thead>
             <tbody>
                 <% log.forEach(function(item){ %>
-                <tr>
-                    <td><%= item %></td>
-                </tr>
-                <% }) %>
+                    <tr>
+                        <td>
+                            <%= item %>
+                        </td>
+                    </tr>
+                    <% }) %>
             </tbody>
         </table>
         <form method="post" action="/">
