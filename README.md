@@ -1,6 +1,6 @@
 # NodeJS Logger
 
-<img src="http://i.imgur.com/aa0HwzS.gif" width="100" height="100" />
+![](https://ephmedia.giphy.com/184880d3-2f89-4dcf-89c0-e7d7b0c39718.gif)
 
 * HTTP POST Logger
 * with Express & EJS
