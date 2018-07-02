@@ -26,24 +26,6 @@ var port = process.env.PORT || 3000;
 // current logs in a variable - without DB. will be lost at server restart
 var logs = [];
 
-// helper function to build our minimal page
-function buildHTML(){
-
-    html = "";
-    // concat log
-    for(var index in logs){
-        html += "<br>" + logs[index];
-    }
-    // add basic textfield
-    html += `
-    <form method="post" action="/">
-    <input type="text" name="message">
-    <input type="submit" value="Submit">
-    </form>
-    `;
-    return html;
-}
-
 /**
  * If we send some data with POST to /, store it with the date
  */
@@ -55,7 +37,7 @@ app.post('/', (req, res) => {
         logs.push(msg);
     }
 
-    res.render("pages/index")
+    res.render("pages/index", {log: logs})
 });
 
 // Generate about page
@@ -63,8 +45,7 @@ app.get('/about', (req, res) => { res.render("pages/about")})
 
 // Just generate the current list for / GET
 app.get('/', (req, res) => {
-
-res.render("pages/index")
+    res.render("pages/index", {log: logs})
 })
 
 app.listen(port, () => console.log('Example app listening on port ' + port))
