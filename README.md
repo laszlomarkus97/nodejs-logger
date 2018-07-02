@@ -1,6 +1,6 @@
 # NodeJS Logger
 
-![](http://i.imgur.com/aa0HwzS.gif)
+![]("http://i.imgur.com/aa0HwzS.gif")
 
 * HTTP POST Logger
 * with Express & EJS
